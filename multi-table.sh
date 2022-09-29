@@ -2,6 +2,7 @@
 if [ $# -ne 2 ]
 then
 echo "Invalid Input"
+exit 0
 else
     num1=$1
     num2=$2
@@ -11,12 +12,11 @@ else
     else
     for i in $(seq 1 $num1)
     do
-    printline=""
         for j in $(seq 1 $num2)
         do
-            printline="$printline$i*$j=`expr $i \* $j` "
+            echo -n "$i*$j=`expr $i \* $j` \t"
         done
-        echo $printline
+        echo -n "\n"
     done
     fi
 fi
